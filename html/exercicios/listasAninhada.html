@@ -1,15 +1,15 @@
 <h1>Listas!</h1>
 <ul class="tree">
-    <li>Back-end
+    <li><span wm-folder>Back-end</span> 
         <ul>
-            <li>App
+            <li> <span wm-folder>App</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
                 </ul>
             </li>
-            <li>
-                Config
+            <li><span wm-folder>Config</span>
+                
                 <ul>
                     <li>Ok</li>
                     <li>ui</li>
@@ -22,4 +22,14 @@
 </ul>
 
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function(e){
+            const ul = folder.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
 
