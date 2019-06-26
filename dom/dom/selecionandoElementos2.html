@@ -10,7 +10,26 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
+        document.querySelector('#primeiro').classList.add('destaque')
+        const selecionar = selector => 
+            document.querySelectorAll(selector).forEach(e => e.classList.add('destaque'))
+        const deselecionar = selector => 
+            document.querySelectorAll(selector).forEach(e => e.classList.remove('destaque'))
+
+        selecionar('div') //seleciona todas as divs
+        deselecionar('*') //limpa todos
+        selecionar('.terceiro.ultimo') //seleciona a div com classe terceiro e ultimo
+        deselecionar('*')
+        selecionar(':not(#primeiro)')  // seleciona todos, menos a div com id primeiro
+        deselecionar('*')
+        selecionar(':nth-child(1)')  // seleciona o primeiro filho de algum elemento
+        deselecionar('*')
+        selecionar('div:nth-of-type(1)')  // seleciona o primeiro elemento do tipo div
+        deselecionar('*')
+        selecionar('[wb-attrib]')  // seleciona  a partir de um atributo
+
+
+
     </script>
 </body>
 </html>
