@@ -17,7 +17,35 @@
         </ul>
     </div>
     <script>
-        // ...
+        // seleciona um elemento que tem um atrubuto destino dentro de uma ul, dentro de uma div
+        // o mesmo de usar const lista = document.querySelector('#compras')
+        const lista = document.querySelector('div ul[destino="escritório"]') 
+        console.log('Elemento ul...................')
+        
+        // seleciona os filhos da ul
+        console.log('childNodes', lista.childNodes)
+        
+        // não seleciona um atributo personalizado
+        console.log('destino', lista.destino)  
+        
+        // getAttribute seleciona um atributo personalizado
+        console.log('destino', lista.getAttribute('destino'))
+          
+        // verifica se tem um atributo
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+          
+        // seta o value de um atributo
+        lista.setAttribute('destino', 'empresa')
+
+        // o mesmo método pode add um atributo inexistente
+        lista.setAttribute('status', 'aberto')
+
+        // remove um atributo inexistente
+        lista.removeAttribute('destino')
+
+
+
+
     </script>
 </body>
 
