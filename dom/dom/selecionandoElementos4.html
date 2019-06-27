@@ -22,7 +22,36 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+        //função que retorna o console.log
+        function log(){ 
+            console.log(this)
+        }
+        //reescrevendo funções para o protótipo dos objetos
+        HTMLCollection.prototype.log = log 
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() // chama o console.log para o pai da ul
+        lista.childNodes.log() // chama o console.log para o filho da ul
+
+        const primeiro = lista.firstChild //pega o primeiro elemento da lista
+        primeiro.log()
+        primeiro.nextSibling.log() // mostra o li que vem logo após o espaço, que é considerado texto
+
+        const ultimo = lista.lastChild //pega o ultimo elemento da lista
+        ultimo.log() //retorna o espaço (texto) entre o ultimo li e o ul
+        ultimo.previousSibling.log() // chama a função ultimo (que retorna o ultimo elemento)e pega o anterior
+
+        lista.children.log() // retorna os elementos filhos da lista sem os espaços
+        lista.firstElementChild.log() // retorna o primeiro elemento da lista e não considera espaço
+        lista.lastElementChild.log() // retorna o ultimo elemento da lista e não considera espaço
+        
+        // lista acessa o ul, parentNode, o pai da ul -> div, previousElementSibling acessa o irmão anterior
+        lista.parentNode.previousElementSibling.log() 
+        // lista acessa o ul, parentNode, o pai da ul -> div, nextElementSibling acessa o irmão posterior
+        lista.parentNode.nextElementSibling.log() 
     </script>
 </body>
 
