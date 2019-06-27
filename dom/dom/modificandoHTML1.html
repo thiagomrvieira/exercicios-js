@@ -9,7 +9,49 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        //CRIANDO O CONTEUDO DE UM BODY COM JS
+
+        //Seleciona o elemento body
+        const body = document.querySelector('body')
+        //cria o elemento div1
+        const div1 = document.createElement('div')
+        //add a classe destaque ao elemento criado
+        div1.classList.add('destaque')
+        //insere conteúdo ao elemento criado
+        div1.innerHTML = 'Primeiro'
+
+        //cria o elemento div2
+        const div2 = document.createElement('div')
+        //seta um atributo personalizado ao elemento criado
+        div2.setAttribute('wm-atributo', 'valor')
+        //insere conteúdo ao elemento criado
+        div2.innerHTML = 'Segundo'
+
+        //cria o elemento p
+        const p = document.createElement('p')
+        //adiciona conteúdo ao elemento criado
+        p.innerHTML = 'Terceiro'
+        //cria o elemento div3
+        const div3 = document.createElement('div')
+        //insere (na ultima posição) o elemento p à div criada
+        div3.appendChild(p)
+
+        //inserindo conteúdo no body
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        //inserindo elemento antes
+        const texto = document.createTextNode('Antes...')
+        //insere na div 3 o primeiro parametro, e seta a posição no segundo parametro 
+        div3.insertBefore(texto, div3.childNodes[0])
+
+        //clonando elemento
+        const div4 = div3.cloneNode(true) //true clona os filhos
+        
+        //inserindo o elemento div4 no body
+        body.appendChild(div4)
+
     </script>
 </body>
 
