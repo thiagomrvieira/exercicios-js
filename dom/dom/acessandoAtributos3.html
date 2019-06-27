@@ -16,7 +16,21 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+
+        //ESTRATÉGIAS DE LEITURA
+
+        //seleciona todos os atributos da lista
+        console.log(lista.attributes) 
+
+        //acessando atributo à partir do índice
+        console.log(lista.attributes[0])
+
+        //acessando atributo usando a notação ponto
+        console.log(lista.attributes.destino)
+
+        //acessando atributo usando a notação de colchetes
+        console.log(lista.attributes['data-urgencia'])
     </script>
 </body>
 
