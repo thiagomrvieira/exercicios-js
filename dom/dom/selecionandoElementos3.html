@@ -31,7 +31,14 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+        console.log(document.forms)
+        console.log(document.forms[0])
+        console.log(document.getElementsByName('pesquisa'))
+        console.log(document.pesquisa) //acessando o form pelo atributo name
+        console.log(document.pesquisa.q) //acessando o form pelo atributo name e o input pelo name q
+        document.pesquisa.q.value = 'Linux brasil' //alterando o value do input q
+        document.pesquisa.hl.value = 'en-us'
+        
     </script>
 </body>
 
