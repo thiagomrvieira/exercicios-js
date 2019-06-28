@@ -10,6 +10,24 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        //seleciona o elemento
+        const item = document.querySelector('div')
+        //seta o elemento com position absolute p/ poder mover
+        item.style.position = 'absolute'
+        // chama a função ao mover o mouse com click selecionado
+        item.onmousemove = e => {
+            const item = e.target
+
+            //altera o tipo do cursor
+            item.style.cursor = 'move'
+            //verifica se o click ta selecionado
+            if(e.buttons) { //e.buttons: valor diferente de 0 = clicado
+                // item (e.target) dispara o evento: seta a posição top à partir do clique 
+                item.style.top = `${e.clientY - (item.clientHeight /2)}px` //pega o eixo y do mouse e subtrai a altura da div dividido por 2
+                item.style.left = `${e.clientX - (item.clientHeight /2)}px` //pega o eixo y do mouse e subtrai a altura da div dividido por 2
+            }
+
+
+        }
     </script>
 </body>

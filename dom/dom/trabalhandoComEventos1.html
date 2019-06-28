@@ -9,15 +9,18 @@
 
 <body class="conteudo exercicio">
     <div>
-        <!-- Pode chamar a função inserindo a função no link: -->
+        <!-- Chamando a função - Forma 01 -->
         <!--<a href="https://google.com.br" onclick="navegarEm5s(event)">Google</a> -->
-        <a href="https://google.com.br">Google</a>
+        
+        <!-- Chamando a função - Forma 02 e 03-->
+        <!-- <a href="https://google.com.br">Google</a> -->
+
+        <!-- Chamando a função - Forma 04-->
+        <a espera-5s href="https://google.com.br">Google</a>
 
     </div>
     <script>
         
-        const link = document.querySelector('a')
-        link.setAttribute('onclick', 'navegarEm5s(event)')
         
         function navegarEm5s(e){
             //interrompe o evento padrão
@@ -29,5 +32,17 @@
                 window.location.href = link.href
             }, 5000)
         }
+
+        // Chamando a função - Forma 02
+        // const link = document.querySelector('a')
+        // link.setAttribute('onclick', 'navegarEm5s(event)')
+        
+        // Chamando a função - Forma 03
+        // const link = document.querySelector('a')
+        // link.onclick = navegarEm5s 
+
+        // Chamando a função - Forma 04 - IDEAL
+        const link = document.querySelector('[espera-5s]')
+        link.onclick = navegarEm5s
     </script>
 </body>
