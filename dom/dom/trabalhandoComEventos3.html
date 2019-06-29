@@ -45,7 +45,16 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        // seleciona os elementos com classe item e centro da div com o atributo wb-dropzonne
+        const items = document.querySelectorAll('[wm-dropzone] .item')
+        items.forEach((item, index) => {
+            item.draggable = true
+        })
+    
+    
+    
+    
+    
     </script>
 </body>
 
