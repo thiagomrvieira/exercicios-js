@@ -8,8 +8,33 @@
 </head>
 <body class="exercicio">
 
+    <div id="app">
+        <p>{{link}}</p>
+        <p><a href="{{ link }}">Binding - Não funciona </a></p>
+        <p><a v-bind:href="link">Binding - Formato padrão</a></p>
+        <p><a :href="link">Binding - Formato reduzido</a></p>
+
+        <!-- Binding bidirecional -->
+        <input type="text" v-model="nome">
+        <br>
+        <span>{{nome}}</span>
+        
+        
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data:{
+                link: "http://www.youtube.com",
+                nome: "Maria"
+            },
+            watch: {
+                nome(novoValor){
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+
+        })
     </script>
 </body>
 </html>
